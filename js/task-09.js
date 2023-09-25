@@ -12,7 +12,3 @@ function colorFunction() {
   body.style.backgroundColor = color;
   colorValue.textContent = color;
 }
-
-// console.dir(body);
-
-// console.log(getRandomHexColor());
