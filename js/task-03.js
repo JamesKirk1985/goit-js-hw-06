@@ -13,12 +13,12 @@ const images = [
   },
 ];
 const container = document.querySelector(".gallery");
+const markup = [];
 images.forEach((elem) =>
-  container.insertAdjacentHTML(
-    "afterbegin",
-    `
-<li style="list-style-type: none; display: flex; justify-content: center; margin-bottom: 10px">
-<img src="${elem.url}" alt="${elem.alt}" style="width: 360px;" />
-</li>`
+  markup.push(
+    `<li style="list-style-type: none; display: flex; justify-content: center; margin-bottom: 10px">
+      <img src="${elem.url}" alt="${elem.alt}" style="width: 360px;" />
+    </li>`
   )
 );
+container.insertAdjacentHTML("afterbegin", markup.join(""));

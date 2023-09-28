@@ -7,10 +7,11 @@ const ingredients = [
   "Condiments",
 ];
 const container = document.querySelector("#ingredients");
+const markup = [];
 ingredients.forEach((elem) => {
   const li = document.createElement("li");
   li.textContent = elem;
   li.className = "item";
-  container.append(li);
-  console.dir(li);
+  markup.push(li);
 });
+container.append(...markup);
