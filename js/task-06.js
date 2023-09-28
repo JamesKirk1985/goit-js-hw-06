@@ -1,14 +1,13 @@
 const input = document.querySelector("#validation-input");
 input.addEventListener("blur", validatorFunction);
 function validatorFunction() {
-  if (Number(input.value.length) === Number(input.dataset.length)) {
-    input.classList.remove("invalid");
-    input.classList.add("valid");
-    // return;
+  if (input.value.length === Number(input.dataset.length)) {
+    updateClass("invalid", "valid");
   } else {
-    input.classList.remove("valid");
-    input.classList.add("invalid");
+    updateClass("valid", "invalid");
   }
-  return;
 }
-console.dir(input);
+function updateClass(class1, class2) {
+  input.classList.remove(class1);
+  input.classList.add(class2);
+}
